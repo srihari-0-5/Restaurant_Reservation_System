@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="admin-dashboard">
+        <header class="dashboard-header">
+            <h1>Dashboard</h1>
+            <a href="login.html" class="admin-link">Logout</a>
+        </header>
+
+        <!-- Stat Cards Section -->
+        <div class="stat-cards-container">
+            <div class="stat-card blue">
+                <div class="card-content">
+                    <h3 id="all-bookings-count">0</h3>
+                    <p>All Bookings</p>
+                </div>
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            </div>
+            <div class="stat-card yellow">
+                <div class="card-content">
+                    <h3 id="new-bookings-count">0</h3>
+                    <p>New Bookings</p>
+                </div>
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg></div>
+            </div>
+            <div class="stat-card green">
+                <div class="card-content">
+                    <h3 id="accepted-bookings-count">0</h3>
+                    <p>Accepted Bookings</p>
+                </div>
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="22 11 16 17 14 15"/></svg></div>
+            </div>
+            <div class="stat-card red">
+                <div class="card-content">
+                    <h3 id="rejected-bookings-count">0</h3>
+                    <p>Rejected Bookings</p>
+                </div>
+                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" x2="22" y1="8" y2="13"/><line x1="22" x2="17" y1="8" y2="13"/></svg></div>
+            </div>
+        </div>
+
+        <!-- Reservations Table Section -->
+        <div class="table-wrapper">
+            <h2>Manage Bookings</h2>
+            <table id="reservations-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Date & Time</th>
+                        <th>Tables</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reservations-tbody"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <main class="container">
+        <div class="confirmation-box">
+            <h1 class="title">Reservation Confirmed!</h1>
+            <p class="subtitle">We look forward to welcoming you. Your booking details are below.</p>
+            <div id="confirmation-details">
+                </div>
+            <a href="index.html" class="home-link">Make another reservation</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailsContainer = document.getElementById('confirmation-details');
+            const data = localStorage.getItem('reservationDetails');
+
+            if (data) {
+                const reservation = JSON.parse(data);
+                const date = new Date(reservation.date);
+                const formattedDate = date.toLocaleDateString('en-US', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+                });
+
+                detailsContainer.innerHTML = `
+                    <p><strong>Name:</strong> ${reservation.name}</p>
+                    <p><strong>Date:</strong> ${formattedDate}</p>
+                    <p><strong>Time:</strong> ${reservation.time}</p>
+                    <p><strong>Party Size:</strong> ${reservation.partySize}</p>
+                    <p><strong>Booking ID:</strong> #${reservation.id}</p>
+                `;
+                // Clear the data from storage after displaying it
+                localStorage.removeItem('reservationDetails');
+            } else {
+                detailsContainer.innerHTML = '<p>No confirmation details found. Please return to the homepage.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
