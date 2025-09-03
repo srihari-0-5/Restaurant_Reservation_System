@@ -1,4 +1,4 @@
-The Gilded Spoon - Restaurant Reservation System
+# The Gilded Spoon - Restaurant Reservation System
 The Gilded Spoon is a full-stack restaurant reservation system featuring a visual booking interface for clients and a comprehensive dashboard for administrators.
 
 Features
